@@ -1,2 +1,3 @@
-package com.example.app.stationaryApp.controllers;public class DemoController {
+package com.example.app.stationaryApp.controllers;
+public class DemoController {
 }

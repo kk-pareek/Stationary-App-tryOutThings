@@ -1,2 +1,3 @@
-package com.example.app.stationaryApp.services;public class DemoService {
+package com.example.app.stationaryApp.services;
+public class DemoService {
 }

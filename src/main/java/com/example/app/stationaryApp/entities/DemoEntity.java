@@ -1,2 +1,3 @@
-package com.example.app.stationaryApp.entities;public class DemoEntity {
+package com.example.app.stationaryApp.entities;
+public class DemoEntity {
 }
