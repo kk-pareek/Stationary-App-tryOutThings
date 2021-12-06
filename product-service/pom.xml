@@ -5,25 +5,14 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-<<<<<<< HEAD
-		<version>2.6.1</version>
-		<relativePath/> <!-- lookup parent from repository -->
-	</parent>
-	<groupId>com.example.app</groupId>
-	<artifactId>customer-service</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>customer-service</name>
-	<description>Customer Service for stationary booking app.</description>
-=======
 		<version>2.6.0</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.tavant.stationary_shop</groupId>
-	<artifactId>customer</artifactId>
+	<artifactId>product</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>customer</name>
+	<name>product</name>
 	<description>Demo project for Stationary shop</description>
->>>>>>> 937377dcce84300bc4c5f7774c7421ced898adaf
 	<properties>
 		<java.version>11</java.version>
 	</properties>
@@ -44,18 +33,17 @@
 			<optional>true</optional>
 		</dependency>
 		<dependency>
-<<<<<<< HEAD
-=======
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
-			<scope>runtime</scope>
-		</dependency>
-		<dependency>
->>>>>>> 937377dcce84300bc4c5f7774c7421ced898adaf
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<scope>runtime</scope>
 		</dependency>
+
+<!--		<dependency>-->
+<!--			<groupId>io.springfox</groupId>-->
+<!--			<artifactId>springfox-boot-starter</artifactId>-->
+<!--			<version>3.0.0</version>-->
+<!--		</dependency>-->
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -68,10 +56,6 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-<<<<<<< HEAD
-				<version>2.6.1</version>
-=======
->>>>>>> 937377dcce84300bc4c5f7774c7421ced898adaf
 			</plugin>
 		</plugins>
 	</build>
