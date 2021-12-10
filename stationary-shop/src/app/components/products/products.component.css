@@ -1,8 +1,8 @@
 .product {
     padding: 5px;
     margin: 2px;
+    display: inline-block;
     align-content: center;
-    display: inline;
 }
 
 .products {
@@ -12,8 +12,7 @@
 }
 
 #addToCart {
-    float: right;
-    margin: 5px;
+    margin-left: 20px;
 }
 
 

@@ -10,11 +10,33 @@ import { CartService } from './cart.service';
 export class CartComponent implements OnInit {
 
   cartProducts : Product[] = [];
+  totalPrice = 0;
 
   constructor(private cartService : CartService) { }
 
   ngOnInit(): void {
     this.cartProducts = this.cartService.getCartProducts();
+    for (const product of this.cartProducts) {
+      this.totalPrice = this.totalPrice + product.productPrice;
+    }
+  }
+
+  onRemove(productId: number) {
+    if(confirm("Do you want to remove this item")){
+      this.cartProducts = this.cartService.removeFromCart(productId);
+      this.totalPrice = 0;
+      for (const product of this.cartProducts) {
+       this.totalPrice = this.totalPrice + product.productPrice;
+      } 
+    }
+  }
+
+  priceIncrease(price: number) {
+    this.totalPrice = this.totalPrice + price;
+  }
+
+  priceDecrease(price: number) {
+    this.totalPrice = this.totalPrice - price;
   }
 
 }

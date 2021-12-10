@@ -12,12 +12,19 @@ export class CartService {
   constructor() { }
 
   addToCart(product : Product){
+    for (let cartProduct of this.cartProducts){
+      if(cartProduct.productId === product.productId){
+        // window.alert("Item is already in cart");
+        return;
+      }
+    }
     this.cartProducts.push(product);
-    console.log(this.cartProducts);
+    // console.log(this.cartProducts);
   }
 
-  removeFromCart(product : Product){
-    // this.cartProducts.;
+  removeFromCart(productId : number){
+    this.cartProducts = this.cartProducts.filter(product => product.productId !== productId);
+    return this.cartProducts;
   }
 
   getCartProducts(){

@@ -1,6 +1,18 @@
-<h4>Welcome to your cart</h4>
+<div class="no_products" *ngIf = "cartProducts.length === 0">
+    <h2>No Products in Cart</h2>
+</div>
+<div id="total_price">
+  <h2>Total Price = {{totalPrice}} INR</h2>
+</div>
 <div>
-    <div *ngFor = "let product of cartProducts">
-        <app-product [product] = "product"></app-product>
+    <div id="cartProduct" *ngFor = "let product of cartProducts">
+        <app-product [product] = "product"></app-product><br>
+        <app-item-count id="itemCount"
+            [product] = "product"
+            (priceIncrease)="priceIncrease($event)" 
+            (priceDecrease)="priceDecrease($event)"
+            >
+        </app-item-count>
+        <button (click)='onRemove(product.productId)' id="remove" class="btn btn-danger" >Remove</button>
     </div>
 </div>

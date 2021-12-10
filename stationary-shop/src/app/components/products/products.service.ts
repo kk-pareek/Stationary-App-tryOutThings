@@ -1,8 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { from } from 'rxjs';
 import { Product } from '../../model/product';
-import { products } from '../../../assets/json/products';
+// import { products } from '../../../assets/json/products';
 
 
 @Injectable({
@@ -10,14 +9,17 @@ import { products } from '../../../assets/json/products';
 })
 export class ProductsService {
 
-  products : Product[] = products;
+  // products : Product[] = products;
+
+  products : Product[] = [];
 
   constructor(private httpClient : HttpClient) { }
 
   getProducts() { 
-    // this.httpClient.get("assets/data.json").subscribe(data => {
-    //     this.products = data as Product[];
-    // })
+
+    this.httpClient.get("assets/json/data.json").subscribe(data => {
+        this.products = data as Product[];
+    })
 
     // console.log(typeof this.products);
     // console.log(this.products);

@@ -1,0 +1,9 @@
+<div id="itemCount">
+  <p>Price : <b>{{product.productPrice * count}} INR</b></p>
+  <p>
+    <button (click)="increaseCount()">+</button>
+    <!-- <input min=1 type="number" (input) = "count=$event.target.value" value={{count}}> -->
+    <!-- <input min=1 type="number"  value={{count}}> -->
+    <button (click)="decreaseCount()">-</button>
+  </p>
+</div>

@@ -1,5 +1,6 @@
 <div class="products">
     <div class="product" *ngFor = "let product of products">
-        <app-product [product] = 'product'></app-product>
+        <app-product [product] = 'product'></app-product><br>
+        <button  (click) = "addToCart(product)" id="addToCart" class="btn btn-primary">Add to cart</button>
     </div>
 </div>
