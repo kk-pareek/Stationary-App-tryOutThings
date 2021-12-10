@@ -1,21 +1,14 @@
 #top-bar {
-    margin: 5px;
     display: block;
-    justify-content: center;
-    border: solid;
-    background-color: tomato;
 }
 
 .navi {
     display: inline-block;
     padding: 10px;
-    margin: 10px;
-    background-color: blueviolet;
     color: white;
-    border: solid black;
-    border-radius: 10%;
+
 }
 
-#contact, #login {
+#contact, #login, #cart {
     float: right;
 }

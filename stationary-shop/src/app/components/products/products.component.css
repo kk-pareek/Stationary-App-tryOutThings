@@ -1,12 +1,19 @@
-.products {
-    padding: 50px;
-    margin: 20px;
-    background-color: darkgray;
+.product {
+    padding: 5px;
+    margin: 2px;
     align-content: center;
     display: inline;
+}
+
+.products {
+    margin-left: 5%;
+    margin-top: 10px;
+    align-content: center;
 }
 
 #addToCart {
     float: right;
     margin: 5px;
 }
+
+

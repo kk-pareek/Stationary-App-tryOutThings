@@ -1,3 +1,5 @@
-<div class="products" *ngFor = "let product of products">
-    <app-product [product] = 'product'></app-product>
+<div class="products">
+    <div class="product" *ngFor = "let product of products">
+        <app-product [product] = 'product'></app-product>
+    </div>
 </div>

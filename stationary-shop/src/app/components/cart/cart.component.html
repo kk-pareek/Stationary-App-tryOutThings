@@ -1,1 +1,6 @@
-<p>cart works!</p>
+<h4>Welcome to your cart</h4>
+<div>
+    <div *ngFor = "let product of cartProducts">
+        <app-product [product] = "product"></app-product>
+    </div>
+</div>
