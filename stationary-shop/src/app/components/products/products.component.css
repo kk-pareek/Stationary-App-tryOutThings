@@ -1,0 +1,18 @@
+.product {
+    padding: 5px;
+    margin: 2px;
+    display: inline-block;
+    align-content: center;
+}
+
+.products {
+    margin-left: 5%;
+    margin-top: 10px;
+    align-content: center;
+}
+
+#addToCart {
+    margin-left: 20px;
+}
+
+
