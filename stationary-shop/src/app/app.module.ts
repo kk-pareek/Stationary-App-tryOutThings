@@ -16,6 +16,9 @@ import { ProductsService } from './components/products/products.service';
 import { ContactComponent } from './components/contact/contact.component';
 import { HomeComponent } from './components/home/home.component';
 import { ItemCountComponent } from './components/cart/item-count/item-count.component';
+import { RegisterPageComponent } from './components/register-page/register-page.component';
+import { AddCustomerService } from './components/register-page/add-customer.service';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -29,14 +32,19 @@ import { ItemCountComponent } from './components/cart/item-count/item-count.comp
     CartComponent,
     ContactComponent,
     HomeComponent,
-    ItemCountComponent
+    ItemCountComponent,
+    RegisterPageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [ProductsService],
+  providers: [
+    ProductsService,
+    AddCustomerService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

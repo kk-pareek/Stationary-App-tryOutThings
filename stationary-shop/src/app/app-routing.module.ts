@@ -7,9 +7,10 @@ import { ProductsComponent } from "./components/products/products.component";
 import { CartComponent } from './components/cart/cart.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { HomeComponent } from './components/home/home.component';
+import { RegisterPageComponent } from './components/register-page/register-page.component';
 
 const routes: Routes = [
-  {path: "login", component: LoginComponent},
+  {path: "login", component: RegisterPageComponent},
   {path: "products", component: ProductsComponent},
   {path: "cart", component: CartComponent},
   {path: "payment", component: PaymentComponent},

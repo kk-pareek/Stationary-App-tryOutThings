@@ -14,13 +14,25 @@ public class Customer {
     @Column(unique = true)
     private String customerEmail;
 
-    public Customer(Integer customerId, String customerName, String customerEmail) {
+    @Column
+    private String customerPassword;
+
+    public Customer(Integer customerId, String customerName, String customerEmail, String customerPassword) {
         this.customerId = customerId;
         this.customerName = customerName;
         this.customerEmail = customerEmail;
+        this.customerPassword = customerPassword;
     }
 
     public Customer() {
+    }
+
+    public String getCustomerPassword() {
+        return customerPassword;
+    }
+
+    public void setCustomerPassword(String customerPassword) {
+        this.customerPassword = customerPassword;
     }
 
     public Integer getCustomerId() {
