@@ -1,8 +1,9 @@
 <div class="no_products" *ngIf = "cartProducts.length === 0">
     <h2>No Products in Cart</h2>
 </div>
-<div id="total_price">
-  <h2>Total Price = {{totalPrice}} INR</h2>
+<div id="total_price" *ngIf = "cartProducts.length !== 0">
+  <p id="totalPrice"><b>Total Price = {{totalPrice}} INR</b></p>
+  <button class="btn btn-primary" (click)="createOrder()">Place Order</button>
 </div>
 <div>
     <div id="cartProduct" *ngFor = "let product of cartProducts">

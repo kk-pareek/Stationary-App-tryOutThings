@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Order } from 'src/app/model/order';
 import { Product } from 'src/app/model/product';
+import { products } from 'src/assets/json/products';
+import { OrderService } from '../order/order.service';
 import { CartService } from './cart.service';
 
 @Component({
@@ -10,16 +13,17 @@ import { CartService } from './cart.service';
 export class CartComponent implements OnInit {
 
   cartProducts : Product[] = [];
+  customerId : number = 7;
   totalPrice = 0;
 
-  constructor(private cartService : CartService) { }
+  constructor(private cartService : CartService, private orderService : OrderService) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void { 
     this.cartProducts = this.cartService.getCartProducts();
     for (const product of this.cartProducts) {
       this.totalPrice = this.totalPrice + product.productPrice;
     }
-  }
+   }
 
   onRemove(productId: number) {
     if(confirm("Do you want to remove this item")){
@@ -37,6 +41,10 @@ export class CartComponent implements OnInit {
 
   priceDecrease(price: number) {
     this.totalPrice = this.totalPrice - price;
+  }
+
+  createOrder() {
+    this.orderService.createOrder(this.cartProducts);
   }
 
 }

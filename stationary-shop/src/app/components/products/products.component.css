@@ -15,4 +15,10 @@
     margin-left: 20px;
 }
 
+#addProduct {
+    float: right;
+    display: block;
+    margin: 5px;
+}
+
 

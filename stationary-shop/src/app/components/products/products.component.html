@@ -1,3 +1,6 @@
+<div id="addProduct">
+    <a routerLink="add-product"><button class="btn btn-primary">Add Product</button></a>
+</div>
 <div class="products">
     <div class="product" *ngFor = "let product of products">
         <app-product [product] = 'product'></app-product><br>
