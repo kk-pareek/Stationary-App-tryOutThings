@@ -30,7 +30,7 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public Product getProductById(Long productId) {
+    public Product getProductById(Integer productId) {
        Optional<Product> product = productRepo.findById(productId);
 
        if (product.isPresent()){
@@ -41,17 +41,19 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public Product updateProductById(Long productId, Product product) {
+    public Product updateProductById(Integer productId, Product product) {
         Product existingProduct = getProductById(productId);
 
-        existingProduct.setProductName(product.getProductName());
-        existingProduct.setProductPrice(product.getProductPrice());
+//        existingProduct.setProductName(product.getProductName());
+//        existingProduct.setProductPrice(product.getProductPrice());
+//        existingProduct.set
 
-        return productRepo.save(existingProduct);
+//        return productRepo.save(existingProduct);
+        return null;
     }
 
     @Override
-    public Product deleteProductById(Long productId) {
+    public Product deleteProductById(Integer productId) {
         Product product = getProductById(productId);
         productRepo.delete(product);
         return product;

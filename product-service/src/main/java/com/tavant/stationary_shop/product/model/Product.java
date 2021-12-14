@@ -1,57 +1,27 @@
 package com.tavant.stationary_shop.product.model;
 
+import lombok.*;
+
 import javax.persistence.*;
 
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@EqualsAndHashCode
+@ToString
 @Entity
 public class Product {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long productId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer productId;
     @Column
     private String productName;
     @Column
     private Double productPrice;
+    @Column
+    private Integer productMaxQty;
+    @Column
+    private String productImg;
 
-    public Product() {
-    }
-
-    public Product(Long productId, String productName, Double productPrice) {
-        this.productId = productId;
-        this.productName = productName;
-        this.productPrice = productPrice;
-    }
-
-    public Long getProductId() {
-        return productId;
-    }
-
-    public void setProductId(Long productId) {
-        this.productId = productId;
-    }
-
-    public String getProductName() {
-        return productName;
-    }
-
-    public void setProductName(String productName) {
-        this.productName = productName;
-    }
-
-    public Double getProductPrice() {
-        return productPrice;
-    }
-
-    public void setProductPrice(Double productPrice) {
-        this.productPrice = productPrice;
-    }
-
-    @Override
-    public String toString() {
-        return "Product{" +
-                "productId='" + productId + '\'' +
-                ", productName='" + productName + '\'' +
-                ", productPrice=" + productPrice +
-                '}';
-    }
 }
