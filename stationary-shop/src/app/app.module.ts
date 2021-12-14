@@ -10,12 +10,15 @@ import { ProductsComponent } from './components/products/products.component';
 import { NavComponent } from './components/nav/nav.component';
 import { LoginComponent } from './components/login/login.component';
 import { PaymentComponent } from './components/payment/payment.component';
-import { AccountComponent } from './components/account/account.component';
 import { CartComponent } from './components/cart/cart.component';
 import { ProductsService } from './components/products/products.service';
 import { ContactComponent } from './components/contact/contact.component';
 import { HomeComponent } from './components/home/home.component';
 import { ItemCountComponent } from './components/cart/item-count/item-count.component';
+import { CustomerComponent } from './components/customer/customer.component';
+import { OrderComponent } from './components/order/order.component';
+import { OrderService } from './components/order/order.service';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -25,18 +28,20 @@ import { ItemCountComponent } from './components/cart/item-count/item-count.comp
     NavComponent,
     LoginComponent,
     PaymentComponent,
-    AccountComponent,
     CartComponent,
     ContactComponent,
     HomeComponent,
-    ItemCountComponent
+    ItemCountComponent,
+    CustomerComponent,
+    OrderComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [ProductsService],
+  providers: [ProductsService, OrderService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -17,8 +17,8 @@ export class ProductsService {
 
   getProducts() { 
 
-    this.httpClient.get("assets/json/data.json").subscribe(data => {
-        this.products = data as Product[];
+    this.httpClient.get("http://localhost:8082/api/product/products").subscribe(data => {
+      this.products = data as Product[];
     })
 
     // console.log(typeof this.products);

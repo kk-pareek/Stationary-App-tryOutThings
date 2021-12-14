@@ -5,3 +5,7 @@
 #cartProducts {
     display: inline;
 }
+
+.no_products, #total_price {
+    text-align: center;
+}
