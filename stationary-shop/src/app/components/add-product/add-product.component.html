@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <hr>
+    <div class="container form-container">
+        <div class="col-md-4">
+            <h3 class="text-center common-font">Add Product</h3>
+            <form class="">
+                <div class="form-group">
+                    <label class="common-font" for="productName">Name: </label>
+                    <input [(ngModel)]="product.productName" type="text" placeholder=""
+                        class="form-control input-field common-font" id="productName" name="productName">
+                </div>
+                <div class="form-group">
+                    <label for="productId" class="common-font">Price: </label>
+                    <input [(ngModel)]="product.productPrice" type="text" placeholder=""
+                        class="form-control common-font input-field" id="productEmail" name="productEmail">
+                </div>
+                <div class="form-group">
+                    <label for="productPassword" class="common-font">Quantity: </label>
+                    <input [(ngModel)]="product.productMaxQty" type="text" placeholder=""
+                        class="form-control common-font input-field" id="productPassword" name="Password">
+                </div>
+                <div class="form-group">
+                  <label for="productPassword" class="common-font">Image URL: </label>
+                  <input [(ngModel)]="product.productImg" type="text" placeholder=""
+                      class="form-control common-font input-field" id="productPassword" name="Password">
+              </div>
+                <div class="align-self-center mx-auto common-font">
+                    <button class="btn btn-success common-font" (click)="addNewProduct()">Add</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -24,6 +24,9 @@ import { CustomerComponent } from './components/customer/customer.component';
 import { OrderComponent } from './components/order/order.component';
 import { OrderService } from './components/order/order.service';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { AddProductComponent } from './components/add-product/add-product.component';
+import { ProductService } from './components/add-product/product.service';
+
 
 
 
@@ -42,7 +45,8 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     RegisterPageComponent,
     CustomerComponent,
     OrderComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    AddProductComponent
   ],
 
   imports: [
@@ -54,7 +58,8 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
   providers: [
     ProductsService,
     AddCustomerService,
-    OrderService
+    OrderService,
+    ProductService
   ],
 
   bootstrap: [AppComponent]

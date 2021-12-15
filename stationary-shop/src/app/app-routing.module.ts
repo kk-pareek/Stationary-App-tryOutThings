@@ -11,11 +11,13 @@ import { HomeComponent } from './components/home/home.component';
 import { RegisterPageComponent } from './components/register-page/register-page.component';
 
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { AddProductComponent } from './components/add-product/add-product.component';
 
 
 const routes: Routes = [
   {path: "login", component: RegisterPageComponent},
   {path: "products", component: ProductsComponent},
+  {path: "products/add-product", component: AddProductComponent},
   {path: "cart", component: CartComponent},
   {path: "payment", component: PaymentComponent},
   {path: "contact", component: ContactComponent},
