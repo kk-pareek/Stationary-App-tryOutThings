@@ -1,4 +1,4 @@
-#top-bar {
+/* #top-bar {
     display: block;
 }
 
@@ -11,5 +11,32 @@
 
 #contact, #login, #cart {
     float: right;
+} */
+
+
+nav {
+    background-color: #E8E8CC;
 }
 
+.font-color {
+    color: #0B4619;
+    font-weight: 600;
+}
+.nav-item {
+    transition: 0.7s all ease;
+}
+
+.nav-item:hover {
+    background-color: #e9d183;
+    border-radius: 10%;
+    transition: 0.5s all ease;
+}
+
+.navbar-brand {
+    transition: 1s all ease;
+}
+
+.navbar-brand:hover {
+    transform: scale(1.1);
+    transition: 0.5s all ease;
+}

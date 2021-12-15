@@ -1,0 +1,9 @@
+.welcome-message {
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+}
+
+.common-font {
+  font-family: 'Domine', serif;
+}

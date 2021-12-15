@@ -1,6 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Domine&family=Ubuntu+Mono:ital,wght@0,700;1,400&display=swap');
+
 .form-container {
     display: flex;
     justify-content: center;
     margin-top: 5%;
     align-items: center;
+}
+
+.input-field {
+    border: solid 1.5px rgb(44, 163, 44);
+}
+
+.common-font {
+    font-family: 'Domine', serif;
 }

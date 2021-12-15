@@ -8,31 +8,28 @@
 </head>
 
 <body>
-    <h1 class="text-center">
-        Welcome to the Stationary-Booking-App
-    </h1>
     <hr>
     <div class="container form-container">
         <div class="col-md-4">
-            <h3 class="text-center">Customer SignUp</h3>
+            <h3 class="text-center common-font">SignUp</h3>
             <form class="">
                 <div class="form-group">
-                    <label for="customerName">customer Name: </label>
-                    <input [(ngModel)]="customer.customerName" type="text" placeholder="customer Name"
-                        class="form-control" id="customerName" name="customerName">
+                    <label class="common-font" for="customerName">Name: </label>
+                    <input [(ngModel)]="customer.customerName" type="text" placeholder="Your name"
+                        class="form-control input-field common-font" id="customerName" name="customerName">
                 </div>
                 <div class="form-group">
-                    <label for="customerId">customer email: </label>
-                    <input [(ngModel)]="customer.customerEmail" type="text" placeholder="customer email"
-                        class="form-control" id="customerEmail" name="customerEmail">
+                    <label for="customerId" class="common-font">Email: </label>
+                    <input [(ngModel)]="customer.customerEmail" type="text" placeholder="Your email"
+                        class="form-control common-font input-field" id="customerEmail" name="customerEmail">
                 </div>
                 <div class="form-group">
-                    <label for="customerPassword">customer Password: </label>
-                    <input [(ngModel)]="customer.customerPassword" type="password" placeholder="customer Password"
-                        class="form-control" id="customerPassword" name="customerPassword">
+                    <label for="customerPassword" class="common-font">Password: </label>
+                    <input [(ngModel)]="customer.customerPassword" type="password" placeholder="Your password"
+                        class="form-control common-font input-field" id="customerPassword" name="Password">
                 </div>
-                <div class="align-self-center mx-auto">
-                    <button class="btn btn-success" (click)="addNewCustomer()">ADD</button>
+                <div class="align-self-center mx-auto common-font">
+                    <button class="btn btn-success common-font" (click)="addNewCustomer()">SignUp</button>
                 </div>
             </form>
         </div>
