@@ -7,3 +7,15 @@
 .common-font {
   font-family: 'Domine', serif;
 }
+
+.img-fluid {
+  width: 60vw;
+  height: 60vh;
+  margin: 20px;
+  transition: 1s all ease;
+}
+
+.img-fluid:hover {
+  transform: scale(1.01);
+  transition: 1s all ease;
+}
