@@ -10,30 +10,27 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 
 @Entity
+@Table(name="cart")
 public class Cart {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer cartId;
 	
-	@Column(unique = true)
-	private Integer customerId;
-	
-	
 	@Column
-	private Integer quantity;
+	private Integer customerId;
 	
     @OneToMany(targetEntity = Product.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "cart_product_fk", referencedColumnName = "cartId")
     private List<Product> products;
 	
-	public Cart(Integer cartId, Integer customerId, Integer quantity, List<Product> products) {
+	public Cart(Integer cartId, Integer customerId, List<Product> products) {
 		super();
 		this.cartId = cartId;
 		this.customerId = customerId;
-		this.quantity = quantity;
 		this.products = products;
 	}
 	public List<Product> getProducts() {
@@ -55,22 +52,15 @@ public class Cart {
 		this.customerId = customerId;
 	}
 
-	public Integer getQuantity() {
-		return quantity;
-	}
-	public void setQuantity(Integer quantity) {
-		this.quantity = quantity;
-	}
+
 	public Cart(Integer cartId, Integer customerId, Integer productId, Integer quantity) {
 		super();
 		this.cartId = cartId;
 		this.customerId = customerId;
-		this.quantity = quantity;
 	}
 	public Cart(Integer customerId, Integer productId, Integer quantity) {
 		super();
 		this.customerId = customerId;
-		this.quantity = quantity;
 	}
 	public Cart() {
 		super();

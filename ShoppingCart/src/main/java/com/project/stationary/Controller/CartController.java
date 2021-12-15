@@ -36,7 +36,7 @@ public class CartController {
 	
 	@GetMapping("/view/{Id}")
 	public ResponseEntity<Optional<Cart>> getCartById(@PathVariable Integer Id){
-		return new ResponseEntity<>(service.getCartById(Id),HttpStatus.FOUND);
+		return new ResponseEntity<>(service.getCartById(Id),HttpStatus.OK);
 	}
 	
 	@PostMapping("/add")
