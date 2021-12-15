@@ -3,6 +3,8 @@ package com.project.stationary.Controller;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,14 +23,20 @@ public class CartController {
 	@Autowired
 	CartService service;
 	
+	@GetMapping
+	public ResponseEntity<String> getStatus(){
+		return new ResponseEntity<>("Cart service is up and running....", HttpStatus.OK);
+	}
+	
+	
 	@GetMapping("/view")
-	Iterable<Cart> getAllCarts(){
-		return service.getAllCarts();
+	 public ResponseEntity<Iterable<Cart>> getAllCarts(){
+		return new ResponseEntity<>(service.getAllCarts(),HttpStatus.OK);
 	}
 	
 	@GetMapping("/view/{Id}")
-	Optional<Cart> getCartById(@PathVariable Integer Id){
-		return service.getCartById(Id);
+	public ResponseEntity<Optional<Cart>> getCartById(@PathVariable Integer Id){
+		return new ResponseEntity<>(service.getCartById(Id),HttpStatus.OK);
 	}
 	
 	@PostMapping("/add")

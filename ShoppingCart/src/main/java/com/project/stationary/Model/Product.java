@@ -13,12 +13,31 @@ public class Product {
     private Integer productId;
     @Column
     private String productName;
-    @Column
-    private Integer productQty;
+    @Column(columnDefinition ="integer default 1")
+    private Integer productQty=1;
     @Column
     private Double productPrice;
+    @Column
+    private String productImg;
 
-    public Product() {
+    public Product(Integer productId, String productName, Integer productQty, Double productPrice, String productImg) {
+		super();
+		this.productId = productId;
+		this.productName = productName;
+		this.productQty = productQty;
+		this.productPrice = productPrice;
+		this.productImg = productImg;
+	}
+
+	public String getProductImg() {
+		return productImg;
+	}
+
+	public void setProductImg(String productImg) {
+		this.productImg = productImg;
+	}
+
+	public Product() {
     }
 
     public Product(Integer productId, String productName, Integer productQty, Double productPrice) {
@@ -61,12 +80,8 @@ public class Product {
     }
 
     @Override
-    public String toString() {
-        return "Product{" +
-                "productId=" + productId +
-                ", productName='" + productName + '\'' +
-                ", productQty=" + productQty +
-                ", productPrice=" + productPrice +
-                '}';
-    }
+	public String toString() {
+		return "Product [productId=" + productId + ", productName=" + productName + ", productQty=" + productQty
+				+ ", productPrice=" + productPrice + ", productImg=" + productImg + "]";
+	}
 }
