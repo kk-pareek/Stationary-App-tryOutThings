@@ -19,9 +19,24 @@ export class CartService {
   constructor(private httpClient : HttpClient) { }
 
   addToCart(product : Product){
+    if(this.checkCart(product)){
+      window.alert("Item is already available in cart");
+      return;
+    }
     this.httpClient.post(this.remoteUrlToHit+"add/product/"+this.customerId, product).subscribe(data => {     
     });
+    window.alert("Item added to cart");
     this.getallProductsinCart();
+  }
+
+  checkCart(product : Product){
+    for(let cartProduct of this.cart.products){
+      if(cartProduct.productId === product.productId){
+        return true;
+      }
+    }
+
+    return false;
   }
 
   getallProductsinCart(){

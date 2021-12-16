@@ -15,7 +15,7 @@ import { AddProductComponent } from './components/add-product/add-product.compon
 
 
 const routes: Routes = [
-  {path: "login", component: RegisterPageComponent},
+  {path: "signup", component: RegisterPageComponent},
   {path: "products", component: ProductsComponent},
   {path: "products/add-product", component: AddProductComponent},
   {path: "cart", component: CartComponent},
