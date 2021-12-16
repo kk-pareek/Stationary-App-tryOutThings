@@ -1,5 +1,6 @@
 <div class="no_products" *ngIf = "cartProducts.length === 0">
-    <h2>No Products in Cart</h2>
+    <h2>The cart is empty!!</h2>
+    <p>What about adding few essentials from products section?</p>
 </div>
 <div id="total_price" *ngIf = "cartProducts.length !== 0">
   <p id="totalPrice"><b>Total Price = {{totalPrice}} INR</b></p>
