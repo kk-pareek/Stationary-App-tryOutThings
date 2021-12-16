@@ -17,7 +17,7 @@ export class ProductsService {
 
   getProducts() { 
 
-    this.httpClient.get("http://localhost:8082/api/product/products").subscribe(data => {
+    this.httpClient.get("http://localhost:8083/api/product/products").subscribe(data => {
       this.products = data as Product[];
     })
 

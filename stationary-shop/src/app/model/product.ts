@@ -2,6 +2,6 @@ export interface Product {
     productId : number;
     productName : string;
     productPrice : number;
-    productQty : number,
+    productQty : number;
     productImg : string;
 }

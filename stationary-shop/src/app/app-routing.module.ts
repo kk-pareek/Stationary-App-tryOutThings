@@ -7,15 +7,17 @@ import { ProductsComponent } from "./components/products/products.component";
 import { CartComponent } from './components/cart/cart.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { HomeComponent } from './components/home/home.component';
-<<<<<<< HEAD
+
 import { RegisterPageComponent } from './components/register-page/register-page.component';
-=======
+
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
->>>>>>> 55ed99fc9fd8bbeb687e19196b8ff592e9bf122e
+import { AddProductComponent } from './components/add-product/add-product.component';
+
 
 const routes: Routes = [
   {path: "login", component: RegisterPageComponent},
   {path: "products", component: ProductsComponent},
+  {path: "products/add-product", component: AddProductComponent},
   {path: "cart", component: CartComponent},
   {path: "payment", component: PaymentComponent},
   {path: "contact", component: ContactComponent},

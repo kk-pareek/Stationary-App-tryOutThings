@@ -19,10 +19,10 @@ import { Customer } from '../../model/customer';
 })
 export class AddCustomerService {
 
-  learnerUrlToAdd : string = "http://localhost:8082/customers";
+  customerUrlToAdd : string = "http://localhost:8082/customers";
   constructor(private theHttpClient : HttpClient) { }
 
   public addNewCustomer(theCustomer: Customer) {
-    return this.theHttpClient.post(this.learnerUrlToAdd, theCustomer);
+    return this.theHttpClient.post(this.customerUrlToAdd, theCustomer);
   }
 }

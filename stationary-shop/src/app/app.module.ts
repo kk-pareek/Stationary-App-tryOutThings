@@ -15,16 +15,20 @@ import { ProductsService } from './components/products/products.service';
 import { ContactComponent } from './components/contact/contact.component';
 import { HomeComponent } from './components/home/home.component';
 import { ItemCountComponent } from './components/cart/item-count/item-count.component';
-<<<<<<< HEAD
+
 import { RegisterPageComponent } from './components/register-page/register-page.component';
 import { AddCustomerService } from './components/register-page/add-customer.service';
 import { FormsModule } from '@angular/forms';
-=======
+
 import { CustomerComponent } from './components/customer/customer.component';
 import { OrderComponent } from './components/order/order.component';
 import { OrderService } from './components/order/order.service';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
->>>>>>> 55ed99fc9fd8bbeb687e19196b8ff592e9bf122e
+import { AddProductComponent } from './components/add-product/add-product.component';
+import { ProductService } from './components/add-product/product.service';
+
+
+
 
 @NgModule({
   declarations: [
@@ -38,14 +42,13 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     ContactComponent,
     HomeComponent,
     ItemCountComponent,
-<<<<<<< HEAD
-    RegisterPageComponent
-=======
+    RegisterPageComponent,
     CustomerComponent,
     OrderComponent,
     PageNotFoundComponent,
->>>>>>> 55ed99fc9fd8bbeb687e19196b8ff592e9bf122e
+    AddProductComponent
   ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -54,12 +57,12 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
   ],
   providers: [
     ProductsService,
-    AddCustomerService
+    AddCustomerService,
+    OrderService,
+    ProductService
   ],
-<<<<<<< HEAD
-=======
-  providers: [ProductsService, OrderService],
->>>>>>> 55ed99fc9fd8bbeb687e19196b8ff592e9bf122e
+
   bootstrap: [AppComponent]
+
 })
 export class AppModule { }
