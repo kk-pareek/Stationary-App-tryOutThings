@@ -42,15 +42,12 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public Order updateOrderById(Integer orderId, Order order) {
-//        Order existingOrder = getOrderById(orderId);
-//
-//        existingOrder.setCustomerId(order.getCustomerId());
-//        existingOrder.setProductId(order.getProductId());
-//        existingOrder.setProductQty(order.getProductQty());
-//        existingOrder.setProductPrice(order.getProductPrice());
-//
-//        return orderRepository.save(existingOrder);
-        return null;
+        Order existingOrder = getOrderById(orderId);
+
+        existingOrder.setCustomerId(order.getCustomerId());
+        existingOrder.setProducts(order.getProducts());
+
+        return orderRepository.save(existingOrder);
     }
 
     @Override

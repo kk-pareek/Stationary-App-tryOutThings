@@ -32,12 +32,12 @@ public class OrderController {
 
     @PostMapping("create")
     public ResponseEntity<Order> createOrder(@RequestBody Order order){
-        return new ResponseEntity<>(orderService.createOrder(order), HttpStatus.CREATED);
+        return new ResponseEntity<>(orderService.createOrder(order), HttpStatus.OK);
     }
 
     @GetMapping("{id}")
     public ResponseEntity<Order> getOrderById(@PathVariable("id") Integer orderId){
-        return new ResponseEntity<>(orderService.getOrderById(orderId), HttpStatus.FOUND);
+        return new ResponseEntity<>(orderService.getOrderById(orderId), HttpStatus.OK);
     }
 
     @PutMapping("update/{id}")

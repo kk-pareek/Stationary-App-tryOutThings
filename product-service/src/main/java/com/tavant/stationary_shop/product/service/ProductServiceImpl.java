@@ -44,12 +44,12 @@ public class ProductServiceImpl implements ProductService {
     public Product updateProductById(Integer productId, Product product) {
         Product existingProduct = getProductById(productId);
 
-//        existingProduct.setProductName(product.getProductName());
-//        existingProduct.setProductPrice(product.getProductPrice());
-//        existingProduct.set
+        existingProduct.setProductName(product.getProductName());
+        existingProduct.setProductPrice(product.getProductPrice());
+        existingProduct.setProductMaxQty(product.getProductMaxQty());
+        existingProduct.setProductImg(product.getProductImg());
 
-//        return productRepo.save(existingProduct);
-        return null;
+        return productRepo.save(existingProduct);
     }
 
     @Override

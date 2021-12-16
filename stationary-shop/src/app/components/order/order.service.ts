@@ -11,7 +11,7 @@ export class OrderService {
   order : Order;
   customerId : number = 7;
 
-  createOrderUrl = "http://localhost:8083/api/order/create";
+  OrderUrl = "http://localhost:8083/api/order/";
 
   constructor(private httpClient : HttpClient) { 
     this.order = {
@@ -22,8 +22,10 @@ export class OrderService {
 
   createOrder(cartProducts : Product[]){
     this.order.products = cartProducts;
+   
+    // console.log(this.order.products);
     
-    this.httpClient.post(this.createOrderUrl, this.order).subscribe(data => {
+    this.httpClient.post(this.OrderUrl+"create", this.order).subscribe(data => {
       console.log(data);
     });
   }

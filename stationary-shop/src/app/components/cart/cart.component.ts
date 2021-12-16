@@ -1,9 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { Order } from 'src/app/model/order';
-import { Product } from 'src/app/model/product';
-import { products } from 'src/assets/json/products';
-import { OrderService } from '../order/order.service';
+import { Component, OnInit, OnChanges } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { CartService } from './cart.service';
+import { Product } from 'src/app/model/product';
+import { OrderService } from '../order/order.service';
 
 @Component({
   selector: 'app-cart',
@@ -12,39 +11,55 @@ import { CartService } from './cart.service';
 })
 export class CartComponent implements OnInit {
 
+  remoteUrlToHit :string ="http://localhost:8084/api/cart/";
+  totalSum : number = 0;
   cartProducts : Product[] = [];
-  customerId : number = 7;
-  totalPrice = 0;
 
-  constructor(private cartService : CartService, private orderService : OrderService) { }
+  constructor(private theHttpClient : HttpClient, private cartService : CartService, private orderService : OrderService) {  }
 
-  ngOnInit(): void { 
-    this.cartProducts = this.cartService.getCartProducts();
-    for (const product of this.cartProducts) {
-      this.totalPrice = this.totalPrice + product.productPrice;
-    }
-   }
-
-  onRemove(productId: number) {
-    if(confirm("Do you want to remove this item")){
-      this.cartProducts = this.cartService.removeFromCart(productId);
-      this.totalPrice = 0;
-      for (const product of this.cartProducts) {
-       this.totalPrice = this.totalPrice + product.productPrice;
-      } 
+  ngOnInit(): void {
+    this.cartService.getallProductsinCart();
+    this.cartProducts = this.cartService.cart.products;
+    this.amount();
+  }
+  
+  deleteProduct(productId : number){
+    if(confirm("You want to remove this item from you cart")){
+      this.cartService.deleteProductByProductId(productId);
+      window.alert("Item removed from cart");
     }
   }
 
-  priceIncrease(price: number) {
-    this.totalPrice = this.totalPrice + price;
+  deleteAllProducts(){
+    if(confirm("You want to remove all items from you cart")){
+      this.cartService.deleteAllProducts();
+      window.alert("All items removed from cart");
+    }
   }
 
-  priceDecrease(price: number) {
-    this.totalPrice = this.totalPrice - price;
+  amount(){
+    let totalSum : number = 0;
+    for(let product of this.cartProducts){
+      totalSum = totalSum + (product.productPrice * product.productQty);
+    }
+
+    this.totalSum=totalSum;
   }
 
-  createOrder() {
+  increaseCount(product : Product){
+    ++product.productQty;
+    this.amount();
+  }
+
+  decreaseCount(product : Product){
+    if(product.productQty > 1){
+      product.productQty--;
+    }
+    this.amount();
+  }
+
+  createOrder(){
     this.orderService.createOrder(this.cartProducts);
+    window.alert("Order Placed. Thank you for shopping")
   }
-
 }

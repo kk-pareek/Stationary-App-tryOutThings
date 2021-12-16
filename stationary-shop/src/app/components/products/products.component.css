@@ -6,8 +6,11 @@
 }
 
 .products {
+    display: block;
+    /* margin: 3%; */
+    /* padding: 2%; */
     margin-left: 5%;
-    margin-top: 10px;
+    margin-top: 90px;
     align-content: center;
 }
 
@@ -18,7 +21,8 @@
 #addProduct {
     float: right;
     display: block;
-    margin: 5px;
+    margin: 1%;
+    padding: 1%;;
 }
 
 /* .add-product-button {
