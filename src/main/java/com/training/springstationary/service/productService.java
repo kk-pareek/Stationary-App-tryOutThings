@@ -31,6 +31,10 @@ public class productService
 
     public void updateProductById(Integer id, product product)
     {
+        product existingProduct = getProductById(id).get();
+        existingProduct.setProductPrice(product.getProductPrice());
+        existingProduct.setProductDescription(product.getProductDescription());
+        existingProduct.setProductName(product.getProductName());
         repository.save(product);
     }
 
