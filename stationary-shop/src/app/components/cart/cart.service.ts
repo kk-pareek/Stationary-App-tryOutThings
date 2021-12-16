@@ -1,33 +1,64 @@
 import { Injectable } from '@angular/core';
 import { Product } from 'src/app/model/product';
-import { products } from 'src/assets/json/products';
+import { HttpClient } from '@angular/common/http';
+import { Cart } from 'src/app/model/cart';
+// import { products } from 'src/assets/json/products';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
 
-  cartProducts : Product[] = [];
-
-  constructor() { }
+  remoteUrlToHit :string ="http://localhost:8084/api/cart/";
+  
+  customerId : number = 7;
+  cart : Cart = {
+    customerId : this.customerId,
+    products : []
+  }
+  constructor(private httpClient : HttpClient) { }
 
   addToCart(product : Product){
-    for (let cartProduct of this.cartProducts){
+    if(this.checkCart(product)){
+      window.alert("Item is already available in cart");
+      return;
+    }
+    this.httpClient.post(this.remoteUrlToHit+"add/product/"+this.customerId, product).subscribe(data => {     
+    });
+    window.alert("Item added to cart");
+    this.getallProductsinCart();
+  }
+
+  checkCart(product : Product){
+    for(let cartProduct of this.cart.products){
       if(cartProduct.productId === product.productId){
-        // window.alert("Item is already in cart");
-        return;
+        return true;
       }
     }
-    this.cartProducts.push(product);
-    // console.log(this.cartProducts);
+
+    return false;
   }
 
-  removeFromCart(productId : number){
-    this.cartProducts = this.cartProducts.filter(product => product.productId !== productId);
-    return this.cartProducts;
+  getallProductsinCart(){
+    this.httpClient.get(this.remoteUrlToHit+this.cart.customerId).subscribe(data => {
+      this.cart = data as Cart;
+      // console.log(this.cart);
+    });
   }
 
-  getCartProducts(){
-    return this.cartProducts;
+  deleteProductByProductId(productId : number){
+    this.httpClient.delete(this.remoteUrlToHit+"delete/"+this.cart.customerId+"/"+productId).subscribe(
+      data => {
+        this.getallProductsinCart();        
+    });
+    this.getallProductsinCart();
   }
+
+  deleteAllProducts(){
+    this.httpClient.delete(this.remoteUrlToHit+"delete/"+this.cart.customerId).subscribe(data => {
+      this.getallProductsinCart();
+    });
+    this.getallProductsinCart();
+  }
+
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Product } from 'src/app/model/product';
 import { ProductsService } from 'src/app/components/products/products.service';
 import { CartService } from '../cart/cart.service';
+import { Cart } from 'src/app/model/cart';
 
 @Component({
   selector: 'app-products',
@@ -24,6 +25,5 @@ export class ProductsComponent implements OnInit {
 
   addToCart(product : Product){
     this.cartService.addToCart(product);
-    // alert("added to cart sussesfully");
   }
 }

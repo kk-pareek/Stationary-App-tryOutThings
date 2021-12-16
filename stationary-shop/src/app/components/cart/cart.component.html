@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="no_products" *ngIf = "cartProducts.length === 0">
     <h2>The cart is empty!!</h2>
     <p>What about adding few essentials from products section?</p>
@@ -18,3 +19,55 @@
         <button (click)='onRemove(product.productId)' id="remove" class="btn btn-danger" >Remove</button>
     </div>
 </div>
+=======
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Shopping Cart UI</title>
+	<link rel="stylesheet" type="text/css" href="cart.component.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,900" rel="stylesheet">
+</head>
+<body>
+   <div class="CartContainer">
+   	   <div class="Header">
+   	   	<p class="Heading"><img src="https://img.icons8.com/ios-glyphs/30/000000/fast-cart.png" style="height: 35px;margin-right: 10px;" />Shopping Cart</p>
+   	   	<button class="btn btn-danger" (click)="deleteAllProducts()">Remove All</button>
+   	   </div>
+
+   	   <div class="cart-Items" *ngFor="let product of cartProducts">
+   	   	  <div class="image-box">
+   	   	  	<img src="{{product.productImg}}" style="height: 200px; border-radius: 10px; width: 200px;" class="img" />
+              <!-- https://helloaugust.in/wp-content/uploads/2020/03/3rs-pen.jpg -->
+              <!-- 'https://www.worldsindia.com/vender/data/product/Stationery%20Items-2037028169.jpg' -->
+   	   	  </div>
+   	   	  <div class="about">
+   	   	  	<h1 class="title">{{product.productName}}</h1>
+            <!-- <h4 class="subtitle" style="font-style: italic;">"Certified Seller"</h4> -->
+   	   	  	<img class="about-img" src="https://t3.ftcdn.net/jpg/04/06/15/40/360_F_406154090_rkriySX3dV4KkKwVq0ZLf3Igr956JvU1.jpg" style="height: 30px"/>
+   	   	  </div>
+   	   	  <div class="counter">
+   	   	  	<div class="btn" id="plus" (click)="increaseCount(product)" >+</div>
+   	   	  	<div class="count" id="quan">{{product.productQty}}</div>
+   	   	  	<div class="btn" id="minus" (click)="decreaseCount(product)">-</div>
+   	   	  </div>
+   	   	  <div class="prices">
+   	   	  	<div class="amount">&#8377; {{product.productPrice * product.productQty}}</div>
+   	   	  	<div class="remove">
+                <button class="btn btn-danger" (click)="deleteProduct(product.productId)">Remove</button>
+            </div>
+   	   	  </div>
+   	   </div>
+   	 <hr>
+   	 <div class="checkout">
+   	 <div class="total">
+   	 	<div>
+   	 		<div class="subtotal"><button class="btn btn-dark" (click)="amount()">Sub Total</button></div>
+   	 	</div>
+   	 	<div class="total-amount" >&#8377; {{totalSum}}</div>
+   	 </div>
+   	 <button class="button-36" (click)="createOrder()">Checkout</button></div>
+   </div>
+</body>
+</html>
+>>>>>>> c44e31b1e8ec5f887e74f39b9e9d1c7b9b8617b9

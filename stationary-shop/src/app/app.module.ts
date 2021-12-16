@@ -14,21 +14,17 @@ import { CartComponent } from './components/cart/cart.component';
 import { ProductsService } from './components/products/products.service';
 import { ContactComponent } from './components/contact/contact.component';
 import { HomeComponent } from './components/home/home.component';
-import { ItemCountComponent } from './components/cart/item-count/item-count.component';
 
 import { RegisterPageComponent } from './components/register-page/register-page.component';
 import { AddCustomerService } from './components/register-page/add-customer.service';
 import { FormsModule } from '@angular/forms';
-
 import { CustomerComponent } from './components/customer/customer.component';
 import { OrderComponent } from './components/order/order.component';
 import { OrderService } from './components/order/order.service';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { AddProductComponent } from './components/add-product/add-product.component';
 import { ProductService } from './components/add-product/product.service';
-
-
-
+import { CartService } from './components/cart/cart.service';
 
 @NgModule({
   declarations: [
@@ -41,7 +37,6 @@ import { ProductService } from './components/add-product/product.service';
     CartComponent,
     ContactComponent,
     HomeComponent,
-    ItemCountComponent,
     RegisterPageComponent,
     CustomerComponent,
     OrderComponent,
@@ -59,7 +54,8 @@ import { ProductService } from './components/add-product/product.service';
     ProductsService,
     AddCustomerService,
     OrderService,
-    ProductService
+    ProductService,
+    CartService
   ],
 
   bootstrap: [AppComponent]

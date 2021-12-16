@@ -16,7 +16,10 @@ import { AddProductComponent } from './components/add-product/add-product.compon
 
 const routes: Routes = [
   {path: "signup", component: RegisterPageComponent},
+<<<<<<< HEAD
 
+=======
+>>>>>>> c44e31b1e8ec5f887e74f39b9e9d1c7b9b8617b9
   {path: "products", component: ProductsComponent},
   {path: "products/add-product", component: AddProductComponent},
   {path: "cart", component: CartComponent},
